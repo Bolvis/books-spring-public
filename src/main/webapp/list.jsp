@@ -37,7 +37,6 @@
             <p>No records</p>
         </c:otherwise>
     </c:choose>
-
     <a href="${pageContext.request.contextPath}/add_form">Add new record</a>
 </body>
 </html>
