@@ -1,7 +1,5 @@
 package pl.bolvis.books.model;
 
-import lombok.Getter;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 

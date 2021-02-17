@@ -11,7 +11,7 @@ const validate = () => {
 
     if (authorForename[0] === "A" || authorSurname[0] === "A") {
         form.submit();
-    }else {
-        message.innerText = "Author's name or surname have to start with 'A'";
+        return;
     }
+    message.innerText = "Author's name or surname have to start with 'A'";
 }

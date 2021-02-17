@@ -3,7 +3,6 @@ package pl.bolvis.books.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import pl.bolvis.books.dao.BookRepo;
 import pl.bolvis.books.model.Book;
 import pl.bolvis.books.services.AddService;
 
@@ -23,8 +22,7 @@ public class AddController {
 
     @PostMapping("/add_book")
     public String addBook(Book book){
-        addService.addBook(book);
-
-        return "redirect:/";
+        addService.addBook(book); //add book to db via service
+        return "redirect:/"; //redirect to home page
     }
 }
