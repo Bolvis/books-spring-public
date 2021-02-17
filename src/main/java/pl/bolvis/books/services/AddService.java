@@ -6,7 +6,7 @@ import pl.bolvis.books.model.Book;
 
 @Service
 public class AddService {
-    //get all books from db
+    //connect to db
     private final BookRepo bookRepo;
 
     public AddService(BookRepo bookRepo) {

@@ -10,7 +10,7 @@ import java.util.List;
 
 @Controller
 public class ListController {
-    //connect to db
+
     private final ListService listService;
 
     public ListController(ListService listService) {

@@ -8,7 +8,7 @@ import pl.bolvis.books.services.AddService;
 
 @Controller
 public class AddController {
-    //connect to db
+
     private final AddService addService;
 
     public AddController(AddService addService) {
