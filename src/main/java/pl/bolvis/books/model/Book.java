@@ -1,7 +1,10 @@
 package pl.bolvis.books.model;
 
+import lombok.Getter;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+
 
 @Entity(name = "books")
 public class Book {
@@ -12,7 +15,6 @@ public class Book {
     private String author;
 
     public String getIsbn() {
-
         return isbn;
     }
 

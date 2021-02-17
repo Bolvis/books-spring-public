@@ -1,7 +1,7 @@
 package pl.bolvis.books.dao;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import pl.bolvis.books.model.Book;
-import org.springframework.data.repository.CrudRepository;
-//please remember it's Crud not Curd
-public interface BookRepo extends CrudRepository<Book, String>{
+
+public interface BookRepo extends JpaRepository<Book, String> {
 }
