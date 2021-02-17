@@ -1,0 +1,19 @@
+table{
+    margin: 0 auto 5vh;
+    clear: both;
+}
+
+tr{
+    margin-bottom: 2em;
+    background-color: beige;
+}
+
+td{
+    width: 15%;
+    padding: 1em 2em 1em 2em;
+    text-align: center;
+}
+
+p{
+    margin-bottom: 2vh;
+}
