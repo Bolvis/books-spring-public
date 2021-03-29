@@ -21,19 +21,20 @@ public class AuthorService {
 
     public Author addAuthor(Author author){
         authorRepository.findAll();
-        if (!matchAuthor(author)){
+        Long id = matchAuthor(author);
+        if (id == -1){
             authorRepository.save(author);
         }
-        return author;
+        return authorRepository.getOne(id);
     }
 
-    private boolean matchAuthor(Author author){
+    private Long matchAuthor(Author author){
         List<Author> authors = authorRepository.findAll();
         for (Author item: authors){
             if (author.getName().equals(item.getName()) && author.getSurname().equals(item.getSurname())){
-                return true;
+                return item.getId();
             }
         }
-        return false;
+        return (long) -1;
     }
 }
