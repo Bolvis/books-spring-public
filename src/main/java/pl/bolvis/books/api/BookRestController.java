@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import pl.bolvis.books.model.Author;
 import pl.bolvis.books.model.Book;
 import pl.bolvis.books.services.BookService;
 
@@ -24,7 +25,7 @@ public class BookRestController {
     }
     
     @PostMapping("/addBook")
-    public void addBook(Book book){
-        bookService.addBook(book);
+    public @ResponseBody Book addBook(Book book, Author author){
+        return bookService.addBook(book, author);
     }
 }

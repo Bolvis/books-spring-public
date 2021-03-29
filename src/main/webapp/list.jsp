@@ -26,7 +26,7 @@
                 </tr>
                 <c:forEach items="${books}" var="book">
                     <tr>
-                        <td>${book.author}</td>
+                        <td>${book.author.name} ${book.author.surname}</td>
                         <td>${book.title}</td>
                         <td>${book.isbn}</td>
                     </tr>

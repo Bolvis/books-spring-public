@@ -1,8 +1,8 @@
 package pl.bolvis.books.services;
 
-import net.bytebuddy.implementation.bytecode.Throw;
 import org.springframework.stereotype.Service;
-import pl.bolvis.books.dao.BookRepo;
+import pl.bolvis.books.dao.BookRepository;
+import pl.bolvis.books.model.Author;
 import pl.bolvis.books.model.Book;
 
 import javax.xml.bind.ValidationException;
@@ -12,28 +12,32 @@ import java.util.List;
 public class BookService {
 
     //connect to db
-    private final BookRepo bookRepo;
+    private final BookRepository bookRepository;
+    private final AuthorService authorService;
 
-    public BookService(BookRepo bookRepo) {
-        this.bookRepo = bookRepo;
+    public BookService(BookRepository bookRepository, AuthorService authorService) {
+        this.bookRepository = bookRepository;
+        this.authorService = authorService;
     }
 
     public List<Book> getAllBooks(){
-        return bookRepo.findAll();
+        return bookRepository.findAll();
     }
 
-    public void addBook(Book book){
-        /*try{
-            String[] author = book.getAuthor().split(" ");
-            String name = author[0];
-            String surname = author[author.length - 1];
+    public Book addBook(Book book, Author author){
+        try{
+            String name = author.getName();
+            String surname = author.getSurname();
             if('A' == name.charAt(0) || 'A' == surname.charAt(0)){
-                bookRepo.save(book);
-                return;
+                authorService.addAuthor(author);
+                book.setAuthor(author);
+                bookRepository.save(book);
+                return book;
             }
-            throw new ValidationException("meatball"); //I wish u know what it is
+            throw new ValidationException("meatball:"); //I wish u know what it is
         }catch (ValidationException e){
-            System.err.println(e.getMessage());
-        }*/
+            e.printStackTrace();
+            return null;
+        }
     }
 }

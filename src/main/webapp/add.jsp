@@ -17,7 +17,8 @@
     <h1>Add new record</h1>
     <form method="POST" action="${pageContext.request.contextPath}/add_book" id="form">
         <label class="container">
-            <input type="text" maxlength="30" placeholder="author" name="author" id="author">
+            <input type="text" maxlength="20" placeholder="name" name="name" id="name">
+            <input type="text" maxlength="30" placeholder="surname" name="surname" id="surname">
             <input type="text" placeholder="title" name="title">
             <input type="text" maxlength="17" placeholder="ISBN" name="isbn"><br>
             <p id = "message">&nbsp</p>
