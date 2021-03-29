@@ -11,5 +11,5 @@ const validate = () => {
         form.submit();
         return;
     }
-    message.innerText = "Author's name or surname have to start with 'A'";
+    message.innerText = "Author's name or surname must start with 'A'";
 }
