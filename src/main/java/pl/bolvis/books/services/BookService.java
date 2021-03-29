@@ -23,7 +23,7 @@ public class BookService {
     }
 
     public void addBook(Book book){
-        try{
+        /*try{
             String[] author = book.getAuthor().split(" ");
             String name = author[0];
             String surname = author[author.length - 1];
@@ -34,6 +34,6 @@ public class BookService {
             throw new ValidationException("meatball"); //I wish u know what it is
         }catch (ValidationException e){
             System.err.println(e.getMessage());
-        }
+        }*/
     }
 }

@@ -10,11 +10,11 @@ import pl.bolvis.books.services.BookService;
 import java.util.List;
 
 @RestController
-public class ExtraController {
+public class BookRestController {
 
     private final BookService bookService;
 
-    public ExtraController(BookService bookService) {
+    public BookRestController(BookService bookService) {
        this.bookService = bookService;
     }
     
