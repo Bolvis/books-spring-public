@@ -34,8 +34,8 @@ public class BookService {
             String name = author.getName();
             String surname = author.getSurname();
             if('A' == name.charAt(0) || 'A' == surname.charAt(0)){
-                authorService.addAuthor(author);
-                book.setAuthor(author);//TODO fix adding book to existing author
+                author = authorService.addAuthor(author);
+                book.setAuthor(author);
                 bookRepository.save(book);
                 return book;
             }

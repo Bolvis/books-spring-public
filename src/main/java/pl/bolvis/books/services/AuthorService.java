@@ -24,8 +24,10 @@ public class AuthorService {
         Long id = matchAuthor(author);
         if (id == -1){
             authorRepository.save(author);
+            return author;
         }
-        return authorRepository.getOne(id);
+        author.setId(id);
+        return author;
     }
 
     private Long matchAuthor(Author author){
