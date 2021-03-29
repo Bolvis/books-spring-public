@@ -1,13 +1,10 @@
 package pl.bolvis.books.services;
 
-import org.hibernate.annotations.Generated;
 import org.springframework.stereotype.Service;
-import pl.bolvis.books.dao.AuthorRepository;
 import pl.bolvis.books.dao.BookRepository;
 import pl.bolvis.books.model.Author;
 import pl.bolvis.books.model.Book;
 
-import javax.persistence.GenerationType;
 import javax.xml.bind.ValidationException;
 import java.util.List;
 
@@ -17,12 +14,10 @@ public class BookService {
     //connect to db
     private final BookRepository bookRepository;
     private final AuthorService authorService;
-    private final AuthorRepository authorRepository;
 
-    public BookService(BookRepository bookRepository, AuthorService authorService, AuthorRepository authorRepository) {
+    public BookService(BookRepository bookRepository, AuthorService authorService) {
         this.bookRepository = bookRepository;
         this.authorService = authorService;
-        this.authorRepository = authorRepository;
     }
 
     public List<Book> getAllBooks(){
@@ -39,7 +34,7 @@ public class BookService {
                 bookRepository.save(book);
                 return book;
             }
-            throw new ValidationException("meatball:"); //I wish u know what it is
+            throw new ValidationException("meatball: Name or surname must start with 'A'"); //I wish u know what it is
         }catch (ValidationException e){
             e.printStackTrace();
             return null;

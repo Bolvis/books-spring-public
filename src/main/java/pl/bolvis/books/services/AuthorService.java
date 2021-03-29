@@ -15,10 +15,6 @@ public class AuthorService {
         this.authorRepository = authorRepository;
     }
 
-    public List<Author> getAuthors(){
-        return authorRepository.findAll();
-    }
-
     public Author addAuthor(Author author){
         authorRepository.findAll();
         Long id = matchAuthor(author);
